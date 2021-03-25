@@ -5,18 +5,25 @@ public class Calculator {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("first input : ");
 		int first = scanner.nextInt();		
-		System.out.println("choose ( + - * / ) : ");
-		String sign = scanner.next();
-		System.out.println("second input : ");
-		int second = scanner.nextInt();
-		if (sign.equals("+")) {
-			System.out.println("덧셈 : " + (first + second));			
-		} else if (sign.equals("-")) {
-			System.out.println("뺄셈 : " + (first - second));			
-		} else if (sign.equals("*")) {
-			System.out.println("곱셈 : " + (first * second));			
-		} else if (sign.equals("/")) {
-			System.out.println("나눗셈 : " + (first / second));			
+		while (true) {
+			System.out.println("choose symbol ( + - * / ) : ");
+			String symbol = scanner.next();
+			if (symbol.equals("quit")) {
+				System.out.println("result : " + first);
+				break;
+			}
+			System.out.println("second input : ");
+			int second = scanner.nextInt();
+			if (symbol.equals("+")) {
+				first = (first + second);
+			} else if (symbol.equals("-")) {
+				first = (first - second);			
+			} else if (symbol.equals("*")) {
+				first = (first * second);			
+			} else if (symbol.equals("/")) {
+				first = (first / second);			
+			}
+			System.out.println(first);
 		}
 	}
 }
