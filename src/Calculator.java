@@ -5,10 +5,10 @@ public class Calculator {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("first input : ");
 		int first = scanner.nextInt();		
-		System.out.println("second input : ");
-		int second = scanner.nextInt();
 		System.out.println("choose ( + - * / ) : ");
 		String sign = scanner.next();
+		System.out.println("second input : ");
+		int second = scanner.nextInt();
 		if (sign.equals("+")) {
 			System.out.println("덧셈 : " + (first + second));			
 		} else if (sign.equals("-")) {
