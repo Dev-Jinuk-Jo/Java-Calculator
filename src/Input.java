@@ -1,20 +1,25 @@
 import java.util.Scanner;
 
 public class Input {
-	static int getFirstValue(Scanner scanner) {
-		System.out.println("first input : ");
-		int input = scanner.nextInt();
+	static String[] splitLineInput(String input) {
+		String[] inputs = input.split(" ");
+		return inputs;
+	}
+	
+	static String getLineInput(Scanner scanner) {
+		System.out.println("input calculating formula");
+		String input = scanner.nextLine();
 		return input;
 	}
-	static int getSecondValue(Scanner scanner) {
-		System.out.println("second input : ");
-		int input = scanner.nextInt();
-		return input;
+
+	static int getNumber(String input) {
+		int result = Integer.parseInt(input);
+		return result;
 	}
-	static String getSymbol(Scanner scanner) {
-		System.out.println("choose symbol ( + - * / ) : ");
-		String input = scanner.next();
-		return input;
+
+	static String getSymbol(String input) {
+		String result = input;
+		return result;
 	}
 
 }

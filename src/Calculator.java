@@ -18,17 +18,16 @@ public class Calculator {
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		int first = Input.getFirstValue(scanner);		
+		String input = Input.getLineInput(scanner);
+		String[] inputs = Input.splitLineInput(input);
+		int first = Input.getNumber(inputs[0]);		
 		int result = first;
-		while (true) {
-			String symbol = Input.getSymbol(scanner);
-			if (symbol.equals("quit")) {
-				System.out.println("result : " + result);
-				break;
-			}
-			int second = Input.getSecondValue(scanner);
+		for(int i = 1; i < inputs.length; i = i + 2) {
+			String symbol = (inputs[i]);
+			int second = Input.getNumber(inputs[i + 1]);
 			result = calculate(symbol, result, second);
-			Output.print(result);
 		}
+		Output.print(result);			
 	}
+
 }
